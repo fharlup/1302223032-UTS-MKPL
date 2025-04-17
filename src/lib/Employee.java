@@ -19,7 +19,8 @@ public class Employee {
 	private int monthWorkingInYear;
 	
 	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempuan
+	public enum Gender { MALE, FEMALE }
+	private Gender gender;
 	
 	private int monthlySalary;
 	private int otherMonthlyIncome;
@@ -31,7 +32,7 @@ public class Employee {
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, Gender gender) {
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -51,7 +52,6 @@ public class Employee {
 	 * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3: 7.000.000 per bulan)
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
-	
 	public void setMonthlySalary(int grade) {
 	int baseSalary = 0;
 
@@ -71,13 +71,12 @@ public class Employee {
 	this.monthlySalary = baseSalary;
 }
 
-	
 	public void setAnnualDeductible(int deductible) {	
 		this.annualDeductible = deductible;
 	}
 	
 	public void setAdditionalIncome(int income) {	
-		this.otherMonthlyIncome = income;
+		this.otherMonthlyIncome = income;//es
 	}
 	
 	public void setSpouse(String spouseName, String spouseIdNumber) {
