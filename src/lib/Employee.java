@@ -116,7 +116,7 @@ public class Employee {
 			otherMonthlyIncome,
 			monthWorkingInYear,
 			annualDeductible,
-			spouseIdNumber.equals(""),
+			spouseIdNumber == null || spouseIdNumber.isEmpty(),	
 			children.size()
 		);
 	}
