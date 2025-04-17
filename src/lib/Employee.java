@@ -15,7 +15,7 @@ public class Employee {
 	private int yearJoined;
 	private int monthJoined;
 	private int dayJoined;
-	private int monthWorkingInYear;
+
 	
 	private boolean isForeigner;
 	public enum Gender { MALE, FEMALE }
@@ -61,6 +61,7 @@ public class Employee {
 	public void setMonthlySalary(int grade) {
 		int baseSalary = 0;
 
+
 		switch (grade) {
 			case 1: baseSalary = 3000000; break;
 			case 2: baseSalary = 5000000; break;
@@ -102,7 +103,7 @@ public class Employee {
 	public int getAnnualIncomeTax() {
 		// Menghitung berapa lama pegawai bekerja dalam setahun ini
 		LocalDate date = LocalDate.now();
-		
+		int monthWorkingInYear;
 		if (date.getYear() == yearJoined) {
 			monthWorkingInYear = date.getMonthValue() - monthJoined;
 		} else {
